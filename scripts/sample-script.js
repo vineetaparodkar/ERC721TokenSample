@@ -5,6 +5,7 @@
 // Runtime Environment's members available in the global scope.
 const hre = require("hardhat");
 require("dotenv").config();
+const {generateMetadata} =require("./ipfs-script");
 
 const { MINTER_ACCOUNT } = process.env;
 
@@ -25,8 +26,14 @@ async function main() {
   );
 
   await erc721Token.deployed();
-
   console.log("ERC721Token deployed to:", erc721Token.address);
+  const ipfsuri=await generateMetadata();
+  const uri="https://ipfs.io/ipfs/"+ipfsuri+"/metadata.json";
+  console.log("URL:",uri);
+  const mintTokenTx = await erc721Token.safeMint(MINTER_ACCOUNT,uri);
+  mintTokenTx.wait();
+  console.log("Token Minted successfully:");
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
