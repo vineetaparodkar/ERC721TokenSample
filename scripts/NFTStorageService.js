@@ -4,9 +4,9 @@ const mime = require("mime");
 const path = require("path");
 
 require("dotenv").config();
-const { API_KEY } = process.env || "";
+const { NFT_STORAGE_API_KEY } = process.env || "";
 
-const client = new NFTStorage({ token: API_KEY });
+const client = new NFTStorage({ token: NFT_STORAGE_API_KEY });
 
 const fileFromPath = async (filePath) => {
   const content = await fs.promises.readFile(filePath);
