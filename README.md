@@ -1,6 +1,6 @@
 # Basic ERC721 token sample
 
-This project demonstrates a basic ERC721 token sample. It comes with a sample contract, a sample script that deploys that contract and uses a ipfs module for uploading metadata, and an example of a task implementation, which simply lists the available accounts.
+This project demonstrates a basic ERC721 token sample. It comes with a sample contract, a sample script that deploys that contract and uses a NFT storage module & Pinata services for uploading metadata, and an example of a task implementation, which simply lists the available accounts.
 
 ## Setup
 
