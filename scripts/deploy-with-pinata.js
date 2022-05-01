@@ -43,7 +43,7 @@ async function main() {
   await erc721Token.deployed();
   console.log("ERC721Token deployed to:", erc721Token.address);
 
-  const imageIPFShash = pinImagePinataService(
+  const imageIPFShash = await pinImagePinataService(
     "./assets/pexels-daniel-dan-7708818.jpg"
   );
 
