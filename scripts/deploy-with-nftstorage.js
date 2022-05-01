@@ -26,7 +26,7 @@ async function main() {
   );
 
   await erc721Token.deployed();
-  console.log("ERC721Token deployed to:", erc721Token.address);
+  console.log("ERC721Token deployed to: ", erc721Token.address);
   const ipfsuri = await NFTStorageService(
     "./assets/pexels-daniel-dan-7708818.jpg"
   );
@@ -34,7 +34,7 @@ async function main() {
   console.log("URL:", uri);
   const mintTokenTx = await erc721Token.safeMint(MINTER_ACCOUNT, uri);
   mintTokenTx.wait();
-  console.log("Token Minted successfully:");
+  console.log("Token Minted successfully!!");
 }
 
 // We recommend this pattern to be able to use async/await everywhere

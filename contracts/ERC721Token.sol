@@ -21,14 +21,12 @@ contract ERC721Token is ERC721, ERC721URIStorage, AccessControl {
         _grantRole(MINTER_ROLE, _minter);
     }
 
-    function safeMint(address to, string memory uri)
-        public
-        onlyRole(MINTER_ROLE)
-    {
+    function safeMint(address to, string memory uri) public onlyRole(MINTER_ROLE) returns (uint256) {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+        return tokenId;
     }
 
     // The following functions are overrides required by Solidity.
