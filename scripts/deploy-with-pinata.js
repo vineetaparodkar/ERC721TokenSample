@@ -28,6 +28,7 @@ async function main() {
       {
         trait_type: "blockchain", //level
         value: 100,
+        max_value:100,
       },
       {
         trait_type: "Base", //properties
@@ -44,10 +45,12 @@ async function main() {
       {
         trait_type: "Level", //level
         value: 5,
+        max_value:10,
       },
       {
         trait_type: "Stamina", //level
         value: 1.4,
+        max_value:10,
       },
       {
         trait_type: "Personality", //properties
@@ -57,16 +60,19 @@ async function main() {
         display_type: "boost_number",//boost number
         trait_type: "Aqua Power",
         value: 40,
+        max_value:100,
       },
       {
         display_type: "boost_percentage",//boost percentage
         trait_type: "Stamina Increase",
         value: 10,
+        max_value:10,
       },
       {
         display_type: "number", //stats
         trait_type: "Generation",
         value: 2,
+        max_value:10,
       },
       {
         "display_type": "date", 
