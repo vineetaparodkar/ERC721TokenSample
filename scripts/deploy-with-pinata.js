@@ -68,6 +68,11 @@ async function main() {
         trait_type: "Generation",
         value: 2,
       },
+      {
+        "display_type": "date", 
+        "trait_type": "birthday", 
+        "value": 1546360800
+      }
     ],
   };
 
