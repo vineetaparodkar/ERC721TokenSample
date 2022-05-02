@@ -26,8 +26,47 @@ async function main() {
     image: "",
     attributes: [
       {
-        trait_type: "blockchain",
+        trait_type: "blockchain", //level
         value: 100,
+      },
+      {
+        trait_type: "Base", //properties
+        value: "Starfish",
+      },
+      {
+        trait_type: "Eyes", //properties
+        value: "Big",
+      },
+      {
+        trait_type: "Mouth", //properties
+        value: "Surprised",
+      },
+      {
+        trait_type: "Level", //level
+        value: 5,
+      },
+      {
+        trait_type: "Stamina", //level
+        value: 1.4,
+      },
+      {
+        trait_type: "Personality", //properties
+        value: "Sad",
+      },
+      {
+        display_type: "boost_number",//boost number
+        trait_type: "Aqua Power",
+        value: 40,
+      },
+      {
+        display_type: "boost_percentage",//boost percentage
+        trait_type: "Stamina Increase",
+        value: 10,
+      },
+      {
+        display_type: "number", //stats
+        trait_type: "Generation",
+        value: 2,
       },
     ],
   };
