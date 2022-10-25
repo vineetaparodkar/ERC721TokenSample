@@ -8,10 +8,10 @@ This project demonstrates a basic ERC721 token sample. It comes with a sample co
 
 - Add Ropsten or Polygon RPC URL's, minter account address, IPFS API key in .env file.
 
-- Compile Solidity ERC20 contract with below command
+- Compile Solidity ERC721 contract with below command
 
     ` npx hardhat compile`
 
-- Deploy ERC20 smart contract with below command
+- Deploy ERC721 smart contract with below command
 
     `node scripts/deploy.js`
