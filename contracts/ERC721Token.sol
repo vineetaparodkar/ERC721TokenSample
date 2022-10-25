@@ -21,11 +21,15 @@ contract ERC721Token is ERC721, ERC721URIStorage, AccessControl {
         _grantRole(MINTER_ROLE, _minter);
     }
 
-    function safeMint(address to, string memory uri) public onlyRole(MINTER_ROLE) returns (uint256) {
+    function safeMint(address to, string memory uri)
+        public
+        onlyRole(MINTER_ROLE)
+        returns (uint256)
+    {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
+        _setTokenURI(tokenId, uri); //setting token uri after token is minted with specific id
         return tokenId;
     }
 
@@ -35,6 +39,7 @@ contract ERC721Token is ERC721, ERC721URIStorage, AccessControl {
         internal
         override(ERC721, ERC721URIStorage)
     {
+        //order of execution ERC721 & ERC721URIStorage(both these contract have _burn,token/uri functions so need to ovrride in contracts deriving them)
         super._burn(tokenId);
     }
 
@@ -53,6 +58,7 @@ contract ERC721Token is ERC721, ERC721URIStorage, AccessControl {
         override(ERC721, AccessControl)
         returns (bool)
     {
+        //function checks to see if it implements the interfac..this function is called by external contracts,wallets
         return super.supportsInterface(interfaceId);
     }
 }
