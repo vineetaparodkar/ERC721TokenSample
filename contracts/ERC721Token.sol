@@ -9,6 +9,8 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract ERC721Token is ERC721, ERC721URIStorage, AccessControl {
     using Counters for Counters.Counter;
 
+    uint256 MAX_SUPPLY = 1000000;
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
@@ -26,6 +28,10 @@ contract ERC721Token is ERC721, ERC721URIStorage, AccessControl {
         onlyRole(MINTER_ROLE)
         returns (uint256)
     {
+        require(
+            _tokenIdCounter.current() < MAX_SUPPLY,
+            "Minting reached the cap"
+        );
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
